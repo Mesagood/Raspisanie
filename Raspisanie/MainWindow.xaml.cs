@@ -20,9 +20,23 @@ namespace Raspisanie
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Users> users = new List<Users>();
+
         public MainWindow()
         {
             InitializeComponent();
+            users = Helper.db.Users.ToList();
+            Load();
+
+        }
+        private void Load()
+        {            
+            //UserListView.ItemsSource = Helper.db.Users.ToList();
+        }
+
+        private void ExitMenu_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

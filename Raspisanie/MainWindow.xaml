@@ -7,6 +7,52 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Menu Height="20" VerticalAlignment="Top">
+            <MenuItem Header="Группы">
+                <MenuItem Header="Добавить ребенка"/>
+                <MenuItem Header="Добавить группу"/>
+                <MenuItem Header="Сформировать группу"/>
+                <MenuItem Header="Удалить ребенка"/>
+                <MenuItem Header="Удалить Группу"/>
+                <MenuItem Header="Расформировать группу"/>
+            </MenuItem>
+            <MenuItem Header="Преподаватели">
+                <MenuItem Header="Добавить преподавателя"/>
+                <MenuItem Header="Добавить предмет"/>
+                <MenuItem Header="Удалить преподавателя"/>
+                <MenuItem Header="Удалить предмет"/>
+            </MenuItem>
+            <MenuItem Header="Расписание">
+                <MenuItem Header="Добавить запись"/>
+                <MenuItem Header="Убрать запись"/>
+                
+            </MenuItem>
+        </Menu>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--ЛИСТ ЮЗЕРОВ-->
+        <!--<ListView Name="UserListView" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Height="350" Width="200" BorderBrush="Black" BorderThickness="1">
+                        <StackPanel>
+                            <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="{Binding Photo}" Height="150" Width="150"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+
     </Grid>
 </Window>
