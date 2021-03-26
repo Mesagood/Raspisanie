@@ -38,5 +38,66 @@ namespace Raspisanie
         {
             Environment.Exit(0);
         }
+
+        private void AddChild_Click(object sender, RoutedEventArgs e)
+        {
+            AddChild addChild = new AddChild();
+            addChild.ShowDialog();
+        }
+
+        private void AddGroup_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void FormAGroup_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteChild_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteGroup_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DisbandGroup_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddTeacher_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddLession_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteTeacher_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteLession_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddRecord_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteRecord_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
