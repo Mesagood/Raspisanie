@@ -7,8 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <DataGrid x:Name="RaspisanieGrid" AutoGenerateColumns="False" Margin=" 0 20 0 0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Группа" Width="100" Binding="{Binding Path=id_group_child}"/>
+                <DataGridTextColumn Header="Занятие" Width="100" Binding="{Binding Path=NameLessions}"/>
+                <DataGridTextColumn Header="№ Кабинета" Width="100" Binding="{Binding Path=numder_classroom}"/>
+                <DataGridTextColumn Header="Дата-время" Width="100" Binding="{Binding Path=date_time_child}"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <Menu Height="20" VerticalAlignment="Top">
-            
+
             <MenuItem Header="Группы">
                 <MenuItem Header="Добавить ребенка" x:Name="AddChild" Click="AddChild_Click"/>
                 <MenuItem Header="Добавить группу" x:Name="AddGroup" Click="AddGroup_Click"/>
@@ -17,14 +25,14 @@
                 <MenuItem Header="Удалить Группу" x:Name="DeleteGroup" Click="DeleteGroup_Click"/>
                 <MenuItem Header="Расформировать группу" x:Name="DisbandGroup" Click="DisbandGroup_Click"/>
             </MenuItem>
-            
+
             <MenuItem Header="Преподаватели">
                 <MenuItem Header="Добавить преподавателя" x:Name="AddTeacher" Click="AddTeacher_Click"/>
                 <MenuItem Header="Добавить предмет" x:Name="AddLession" Click="AddLession_Click"/>
                 <MenuItem Header="Удалить преподавателя" x:Name="DeleteTeacher" Click="DeleteTeacher_Click"/>
                 <MenuItem Header="Удалить предмет" x:Name="DeleteLession" Click="DeleteLession_Click"/>
             </MenuItem>
-            
+
             <MenuItem Header="Расписание">
                 <MenuItem Header="Добавить запись" x:Name="AddRecord" Click="AddRecord_Click"/>
                 <MenuItem Header="Убрать запись" x:Name="DeleteRecord" Click="DeleteRecord_Click"/>
@@ -51,10 +59,10 @@
                         <StackPanel>
                             <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="{Binding Photo}" Height="150" Width="150"/>
                         </StackPanel>
-                    </Border>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
+                        </Border>
+                        </DataTemplate>
+                        </ListView.ItemTemplate>
+                        </ListView> -->
 
     </Grid>
 </Window>

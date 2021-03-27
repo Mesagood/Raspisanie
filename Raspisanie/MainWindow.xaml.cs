@@ -20,18 +20,27 @@ namespace Raspisanie
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Users> users = new List<Users>();
+        RaspisanieEntities db = new RaspisanieEntities();
 
         public MainWindow()
         {
             InitializeComponent();
-            users = Helper.db.Users.ToList();
             Load();
-
         }
         private void Load()
-        {            
-            //UserListView.ItemsSource = Helper.db.Users.ToList();
+        {
+            
+            var lessionchildren = from lc in db.Lession_Child
+                                  join gc in db.Group_Child on lc.id_group_child equals gc.id_group_child
+                                  join l in db.Lessions on lc.FK_id_Lession equals l.IdLessions
+                                  select new
+                                  {
+                                      gc.id_group_child,
+                                      l.NameLessions,
+                                      lc.numder_classroom,
+                                      lc.date_time_child
+                                  };
+            RaspisanieGrid.ItemsSource = lessionchildren.ToList();
         }
 
         private void ExitMenu_Click(object sender, RoutedEventArgs e)
