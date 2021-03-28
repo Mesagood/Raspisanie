@@ -4,13 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6e6f2fb952a14a3cb7dd2c73115cf614" Name="Diagram1">
-        <EntityTypeShape EntityType="gr681_bsyuModel.Child" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="gr681_bsyuModel.Group" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+      <Diagram DiagramId="927246f8c4914bdc98e3562f30d697fe" Name="Diagram1">
+        <EntityTypeShape EntityType="gr681_bsyuModel.Child" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="gr681_bsyuModel.Group" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="gr681_bsyuModel.Group_Child" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="gr681_bsyuModel.Lession_Child" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="gr681_bsyuModel.Lession_Employee" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="gr681_bsyuModel.Lessions" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="gr681_bsyuModel.Lessions" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="gr681_bsyuModel.TEST" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="gr681_bsyuModel.Users" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
         <AssociationConnector Association="gr681_bsyuModel.FK_Group_Child_Child" ManuallyRouted="false" />
         <AssociationConnector Association="gr681_bsyuModel.FK_Group_Child_Group" ManuallyRouted="false" />

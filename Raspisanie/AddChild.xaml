@@ -7,6 +7,18 @@
         mc:Ignorable="d"
         Title="AddChild" Height="450" Width="800">
     <Grid>
+        <DataGrid x:Name="testgrid" AutoGenerateColumns="False" Margin=" 0 20 0 30" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Группа" Width="100" Binding="{Binding Path=id}"/>
+                <DataGridTextColumn Header="Занятие" Width="100" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn x:Name="STATUS" Binding="{Binding Path=Status}" Visibility="Hidden"/>
+            </DataGrid.Columns>
+        </DataGrid>
         
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="93,393,0,0" VerticalAlignment="Top" Width="75" x:Name="add" Click="add_Click"/>
+        <Button Content="Отменить" HorizontalAlignment="Left" Margin="293,393,0,0" VerticalAlignment="Top" Width="75" x:Name="cancel" Click="cancel_Click"/>
+        <Button Content="Удалить" HorizontalAlignment="Left" Margin="185,392,0,0" VerticalAlignment="Top" Width="75" x:Name="del" Click="del_Click"/>
+
+
     </Grid>
 </Window>

@@ -23,6 +23,7 @@ namespace Raspisanie
     
         public int IdLessions { get; set; }
         public string NameLessions { get; set; }
+        public string Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Lession_Child> Lession_Child { get; set; }

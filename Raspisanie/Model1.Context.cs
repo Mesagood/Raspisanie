@@ -31,6 +31,7 @@ namespace Raspisanie
         public virtual DbSet<Lession_Child> Lession_Child { get; set; }
         public virtual DbSet<Lession_Employee> Lession_Employee { get; set; }
         public virtual DbSet<Lessions> Lessions { get; set; }
+        public virtual DbSet<TEST> TEST { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }
 }

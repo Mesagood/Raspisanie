@@ -12,19 +12,13 @@ namespace Raspisanie
     using System;
     using System.Collections.Generic;
     
-    public partial class Group
+    public partial class TEST
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Group()
-        {
-            this.Group_Child = new HashSet<Group_Child>();
-        }
-    
-        public int IdGroup { get; set; }
-        public int NumGroup { get; set; }
+        public int id { get; set; }
+        public string Name { get; set; }
         public string Status { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Group_Child> Group_Child { get; set; }
+        public string Statussss { get; set; }
+        public string Statusssssss { get; set; }
+        public string Stattttus { get; set; }
     }
 }
