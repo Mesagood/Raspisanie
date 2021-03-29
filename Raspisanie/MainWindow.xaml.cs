@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Raspisanie.Groups;
 
 namespace Raspisanie
 {
@@ -50,13 +51,12 @@ namespace Raspisanie
 
         private void AddChild_Click(object sender, RoutedEventArgs e)
         {
-            AddChild addChild = new AddChild();
-            addChild.ShowDialog();
+            new ChildWindow().ShowDialog();
         }
 
         private void AddGroup_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void FormAGroup_Click(object sender, RoutedEventArgs e)

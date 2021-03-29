@@ -12,49 +12,48 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Raspisanie
+namespace Raspisanie.Groups
 {
     /// <summary>
-    /// Логика взаимодействия для AddChild.xaml
+    /// Логика взаимодействия для ChildWindow.xaml
     /// </summary>
-    public partial class AddChild : Window
+    public partial class ChildWindow : Window
     {
         RaspisanieEntities db = new RaspisanieEntities();
-
-        public AddChild()
+        public ChildWindow()
         {
             InitializeComponent();
             Load();
         }
-
         private void Load()
         {
-            var ene = from i in db.TEST
+            var ene = from i in db.Child
                       where i.Status == "true"
                       select i;
 
-            testgrid.ItemsSource = ene.ToList();
+            ChildGrid.ItemsSource = ene.ToList();
 
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            TEST t = new TEST();
-            t.Name = addname.Text;
-            t.Status = "true";
-            db.TEST.Add(t);
+            new AddChildWindow().ShowDialog();
+            //TEST t = new TEST();
+            ////t.Name = addname.Text;
+            //t.Status = "true";
+            //db.TEST.Add(t);
 
-            db.SaveChanges();
-            MessageBox.Show("Add");
-            Load();
+            //db.SaveChanges();
+            //MessageBox.Show("Add");
+            //Load();
         }
 
 
         private void del_Click(object sender, RoutedEventArgs e)
         {
-
-            TEST T = (TEST)testgrid.SelectedItem;
-            T.Status = "false";           
+            Child child = (Child)ChildGrid.SelectedItem;
+            
+            child.Status = "false";
             db.SaveChanges();
             MessageBox.Show("DEL");
             Load();
@@ -66,6 +65,9 @@ namespace Raspisanie
             Load();
         }
 
+        private void AddChild_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }

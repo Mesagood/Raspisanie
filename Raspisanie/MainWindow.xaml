@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Raspisanie"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="430" ResizeMode="NoResize">
     <Grid>
         <DataGrid x:Name="RaspisanieGrid" AutoGenerateColumns="False" Margin=" 0 20 0 0" IsReadOnly="True">
             <DataGrid.Columns>
@@ -19,18 +19,16 @@
         <Menu Height="20" VerticalAlignment="Top">
 
             <MenuItem Header="Группы">
-                <MenuItem Header="Добавить ребенка" x:Name="AddChild" Click="AddChild_Click"/>
-                <MenuItem Header="Добавить группу" x:Name="AddGroup" Click="AddGroup_Click"/>
+                <MenuItem Header="Дети" x:Name="AddChild" Click="AddChild_Click"/>
+                <MenuItem Header="Группы" x:Name="AddGroup" Click="AddGroup_Click"/>
                 <MenuItem Header="Сформировать группу" x:Name="FormAGroup" Click="FormAGroup_Click"/>
                 <MenuItem Header="Удалить ребенка" x:Name="DeleteChild" Click="DeleteChild_Click"/>
                 <MenuItem Header="Удалить Группу" x:Name="DeleteGroup" Click="DeleteGroup_Click"/>
                 <MenuItem Header="Расформировать группу" x:Name="DisbandGroup" Click="DisbandGroup_Click"/>
             </MenuItem>
 
-            <MenuItem Header="Преподаватели">
-                <MenuItem Header="Добавить преподавателя" x:Name="AddTeacher" Click="AddTeacher_Click"/>
+            <MenuItem Header="Занятия">
                 <MenuItem Header="Добавить предмет" x:Name="AddLession" Click="AddLession_Click"/>
-                <MenuItem Header="Удалить преподавателя" x:Name="DeleteTeacher" Click="DeleteTeacher_Click"/>
                 <MenuItem Header="Удалить предмет" x:Name="DeleteLession" Click="DeleteLession_Click"/>
             </MenuItem>
 

@@ -1,0 +1,36 @@
+﻿<Window x:Class="Raspisanie.Groups.ChildWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Raspisanie.Groups"
+        mc:Ignorable="d"
+        Title="ChildWindow" Height="450" Width="900">
+    <Grid>
+        <DataGrid x:Name="ChildGrid" AutoGenerateColumns="False" Margin="0 30 0 0" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия (Реб)" Width="auto" Binding="{Binding Path=first_name_child}"/>
+                <DataGridTextColumn Header="Имя (Реб)" Width="auto" Binding="{Binding Path=last_name_child}"/>
+                <DataGridTextColumn Header="Отчество (Реб)" Width="auto" Binding="{Binding Path=middle_name_child}"/>
+                <DataGridTextColumn Header="Дата рождения" Width="auto" Binding="{Binding Path=data_of_bird, StringFormat=\{0:dd.MM.yyyy\}}"/>
+                <DataGridTextColumn Header="Фамилия (Род)" Width="auto" Binding="{Binding Path=first_name_parent}"/>
+                <DataGridTextColumn Header="Имя (Род)" Width="auto" Binding="{Binding Path=last_name_parent}"/>
+                <DataGridTextColumn Header="Отчество (Род)" Width="auto" Binding="{Binding Path=middle_name_parent}"/>
+                <DataGridTextColumn Header="Телефон" Width="auto" Binding="{Binding Path=telephone_parent}"/>
+                <DataGridTextColumn Header="СНИЛС" Width="auto" Binding="{Binding Path=SNILS}"/>
+                <DataGridTextColumn Header="ПФДО" Width="auto" Binding="{Binding Path=PFDO}"/>
+                <DataGridTextColumn Header="Программа" Width="auto" Binding="{Binding Path=program}"/>
+                <DataGridTextColumn Header="Класс" Width="auto" Binding="{Binding Path=class}"/>
+                <DataGridTextColumn Header="Смена" Width="auto" Binding="{Binding Path=shift}"/>
+                <DataGridTextColumn Header="Школа" Width="auto" Binding="{Binding Path=school}"/>
+                <DataGridTextColumn Header="Адрес" Width="auto" Binding="{Binding Path=address}"/>
+                <DataGridTextColumn Header="Педагог" Width="auto" Binding="{Binding Path=educator}"/>
+                <DataGridTextColumn x:Name="STATUS" Binding="{Binding Path=Status}" Visibility="Hidden"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="120,2,0,0" VerticalAlignment="Top" Width="75" x:Name="add" Click="add_Click"/>
+        <Button Content="Отменить" HorizontalAlignment="Left" Margin="434,2,0,0" VerticalAlignment="Top" Width="75" x:Name="cancel" Click="cancel_Click"/>
+        <Button Content="Удалить" HorizontalAlignment="Left" Margin="287,8,0,0" VerticalAlignment="Top" Width="75" x:Name="del" Click="del_Click"/>
+    </Grid>
+</Window>
