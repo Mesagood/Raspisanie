@@ -15,7 +15,7 @@
                 <DataGridTextColumn Header="Дата-время" Width="100" Binding="{Binding Path=date_time_child, StringFormat=\{0:dd.MM.yy HH:mm\}}"/>
             </DataGrid.Columns>
         </DataGrid>
-        
+
         <Menu Height="20" VerticalAlignment="Top">
 
             <MenuItem Header="Группы">
@@ -37,31 +37,5 @@
                 <MenuItem Header="Убрать запись" x:Name="DeleteRecord" Click="DeleteRecord_Click"/>
             </MenuItem>
         </Menu>
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!--ЛИСТ ЮЗЕРОВ-->
-        <!--<ListView Name="UserListView" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Border Height="350" Width="200" BorderBrush="Black" BorderThickness="1">
-                        <StackPanel>
-                            <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="{Binding Photo}" Height="150" Width="150"/>
-                        </StackPanel>
-                        </Border>
-                        </DataTemplate>
-                        </ListView.ItemTemplate>
-                        </ListView> -->
-
     </Grid>
 </Window>

@@ -5,67 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Raspisanie.Groups"
         mc:Ignorable="d"
-        Title="AddChildWindow" Height="350" Width="800" ResizeMode="NoResize">
+        Title="AddChildWindow" Height="350" Width="700" ResizeMode="NoResize">
     <Window.Resources>
-
         <SolidColorBrush x:Key="brushWatermarkBackground" Color="White" />
         <SolidColorBrush x:Key="brushWatermarkForeground" Color="LightSteelBlue" />
         <SolidColorBrush x:Key="brushWatermarkBorder" Color="Indigo" />
-
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
-
         <Style x:Key="EntryFieldStyle" TargetType="Grid" >
             <Setter Property="HorizontalAlignment" Value="Stretch" />
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
-
     </Window.Resources>
-
-
-
     <Grid>
         <!--ФИО + ДР ребенка-->
-        <Grid Width="100" Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="0,45,645,0" HorizontalAlignment="Right" VerticalAlignment="Top" >
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="49,45,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" >
             <TextBlock Margin="5,2" Text="Фамилия (Реб)" Foreground="{StaticResource brushWatermarkForeground}"
                        Visibility="{Binding ElementName=FirstNameChild, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
             <TextBox TextWrapping="Wrap" Name="FirstNameChild" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
         </Grid>
-        <Grid Width="100" Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="0,95,645,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="49,95,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">
             <TextBlock Margin="5,2" Text="Имя (Реб)" Foreground="{StaticResource brushWatermarkForeground}"
                        Visibility="{Binding ElementName=LastNameChild, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
             <TextBox Name="LastNameChild" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
         </Grid>
-        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="0,145,645,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100">
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="49,145,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">
             <TextBlock Margin="5,2" Text="Отчество (Реб)" Foreground="{StaticResource brushWatermarkForeground}"
                        Visibility="{Binding ElementName=MiddleNameChild, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
             <TextBox Name="MiddleNameChild" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
         </Grid>
 
-        <Grid Width="100" Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="0,195,645,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="49,195,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">
             <DatePicker Name="DateOfBird" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
         </Grid>
 
 
         <!--ФИО + ТЕЛ РОД-->
-        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="200,45,494,0" VerticalAlignment="Top">
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="200,45,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">
             <TextBlock Margin="5,2" Text="Фамилия (Род)" Foreground="{StaticResource brushWatermarkForeground}"
                        Visibility="{Binding ElementName=FirstNameParent, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
             <TextBox Name="FirstNameParent" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
         </Grid>
 
-        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="200,95,494,0" VerticalAlignment="Top">
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="200,95,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">
             <TextBlock Margin="5,2" Text="Имя (Род)" Foreground="{StaticResource brushWatermarkForeground}"
                        Visibility="{Binding ElementName=LastNameParent, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
             <TextBox Name="LastNameParent" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
         </Grid>
 
-        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="200,145,494,0" VerticalAlignment="Top">
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="200,145,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">
             <TextBlock Margin="5,2" Text="Отчество (Род)" Foreground="{StaticResource brushWatermarkForeground}"
                        Visibility="{Binding ElementName=MiddleNameParent, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
             <TextBox Name="MiddleNameParent" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
         </Grid>
 
-        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="200,195,494,0" VerticalAlignment="Top">
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="200,195,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">
             <TextBlock Margin="5,2" Text="Телефон" Foreground="{StaticResource brushWatermarkForeground}"
                        Visibility="{Binding ElementName=TelephoneNumber, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
             <TextBox MaxLength="20" Name="TelephoneNumber" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
@@ -73,55 +66,59 @@
 
         <!--ОБЩАЯ ИНФА-->
 
-        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="351,45,343,0" VerticalAlignment="Top">
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="351,45,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">
             <TextBlock Margin="5,2" Text="СНИЛС" Foreground="{StaticResource brushWatermarkForeground}"
                        Visibility="{Binding ElementName=Snils, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
             <TextBox Name="Snils" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
         </Grid>
 
-        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="351,75,343,0" VerticalAlignment="Top">
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="351,75,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">
             <TextBlock Margin="5,2" Text="ПФДО" Foreground="{StaticResource brushWatermarkForeground}"
                        Visibility="{Binding ElementName=Pfdo, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
             <TextBox  Name="Pfdo" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
         </Grid>
 
-        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="351,105,343,0" VerticalAlignment="Top">
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="351,105,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">
             <TextBlock Margin="5,2" Text="Программа" Foreground="{StaticResource brushWatermarkForeground}"
                        Visibility="{Binding ElementName=ProgramTB, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
             <TextBox Name="ProgramTB" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
         </Grid>
 
-        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="351,135,343,0" VerticalAlignment="Top">
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="351,135,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">
             <TextBlock Margin="5,2" Text="Класс" Foreground="{StaticResource brushWatermarkForeground}"
                        Visibility="{Binding ElementName=ClassTB, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
             <TextBox Name="ClassTB" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
         </Grid>
 
-        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="351,165,343,0" VerticalAlignment="Top">
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="351,165,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">
             <TextBlock Margin="5,2" Text="Смена" Foreground="{StaticResource brushWatermarkForeground}"
                        Visibility="{Binding ElementName=Shift, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
             <TextBox Name="Shift" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
         </Grid>
 
-        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="500,45,194,0" VerticalAlignment="Top">
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="500,45,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">
             <TextBlock Margin="5,2" Text="Школа" Foreground="{StaticResource brushWatermarkForeground}"
                        Visibility="{Binding ElementName=School, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
             <TextBox Name="School" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
         </Grid>
 
-        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="500,95,194,0" VerticalAlignment="Top">
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="500,95,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">
             <TextBlock Margin="5,2" Text="Адрес" Foreground="{StaticResource brushWatermarkForeground}"
                        Visibility="{Binding ElementName=AddressTB, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
             <TextBox Name="AddressTB" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
         </Grid>
 
-        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="500,145,194,0" VerticalAlignment="Top">
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="500,145,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100">
             <TextBlock Margin="5,2" Text="Преподаватель" Foreground="{StaticResource brushWatermarkForeground}"
                        Visibility="{Binding ElementName=EducatorTB, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
             <TextBox Name="EducatorTB" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
         </Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="54,274,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="214,273,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="54,274,0,0" VerticalAlignment="Top" Width="75" x:Name="AddChild" Click="AddChild_Click"/>
+        <Button Content="Отменить" HorizontalAlignment="Left" Margin="214,273,0,0" VerticalAlignment="Top" Width="75"  x:Name="CancelBTN" Click="CancelBTN_Click"/>
+
+        <Label Content="Не все поля заполнены!" Margin="353,213,0,0" Visibility="Hidden" x:Name="NotAll" Foreground="Red" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="329" FontSize="16"/>
+        <Label Content="Запись добавлена!" Margin="353,213,0,0" Visibility="Hidden" x:Name="Finally" Foreground="Green" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="310" FontSize="16"/>
+
 
 
     </Grid>

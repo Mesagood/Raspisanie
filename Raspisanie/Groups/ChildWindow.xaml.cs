@@ -38,25 +38,32 @@ namespace Raspisanie.Groups
         private void add_Click(object sender, RoutedEventArgs e)
         {
             new AddChildWindow().ShowDialog();
-            //TEST t = new TEST();
-            ////t.Name = addname.Text;
-            //t.Status = "true";
-            //db.TEST.Add(t);
-
-            //db.SaveChanges();
-            //MessageBox.Show("Add");
-            //Load();
+            Load();
         }
 
 
         private void del_Click(object sender, RoutedEventArgs e)
         {
-            Child child = (Child)ChildGrid.SelectedItem;
+            MessageBoxResult messageBoxResult = MessageBox.Show
+                ("Вы действительно хотите удалить запись?",
+                "Внимаение!",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Information);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                Child child = (Child)ChildGrid.SelectedItem;
+                child.Status = "false";
+                db.SaveChanges();
+                Load();
+            }
+            else
+            {
+                
+            }
+
+
+
             
-            child.Status = "false";
-            db.SaveChanges();
-            MessageBox.Show("DEL");
-            Load();
         }
 
 

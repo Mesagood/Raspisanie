@@ -23,9 +23,12 @@ namespace Raspisanie
     {
         RaspisanieEntities db = new RaspisanieEntities();
 
+      
         public MainWindow()
         {
             InitializeComponent();
+           
+
             Load();
         }
         private void Load()
@@ -43,21 +46,18 @@ namespace Raspisanie
                                   };
             RaspisanieGrid.ItemsSource = lessionchildren.ToList();
         }
-
-        private void ExitMenu_Click(object sender, RoutedEventArgs e)
-        {
-            Environment.Exit(0);
-        }
-
+     
         private void AddChild_Click(object sender, RoutedEventArgs e)
         {
             new ChildWindow().ShowDialog();
         }
 
         private void AddGroup_Click(object sender, RoutedEventArgs e)
-        {
+        {           
             
         }
+
+      
 
         private void FormAGroup_Click(object sender, RoutedEventArgs e)
         {
