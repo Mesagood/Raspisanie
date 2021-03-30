@@ -19,6 +19,7 @@ namespace Raspisanie.Groups
     {
         RaspisanieEntities db = new RaspisanieEntities();
         DispatcherTimer time;
+
         public AddChildWindow()
         {
             InitializeComponent();
@@ -31,39 +32,47 @@ namespace Raspisanie.Groups
         {
             Child child = new Child();
 
-            if (FirstNameChild.Text == "" && LastNameChild.Text == "" && DateOfBird.SelectedDate == null
-                && FirstNameParent.Text == "" && LastNameParent.Text == "" && TelephoneNumber.Text == ""
-                && Pfdo.Text =="" && ProgramTB.Text =="" && ClassTB.Text == "" && Shift.Text == "" && EducatorTB.Text == "")
+            if (FirstNameChild.Text == "" || LastNameChild.Text == "" || DateOfBird.SelectedDate == null
+                || FirstNameParent.Text == "" || LastNameParent.Text == "" || TelephoneNumber.Text == ""
+                || Pfdo.Text =="" || ProgramTB.Text =="" || ClassTB.Text == "" || Shift.Text == "" || EducatorTB.Text == "")
             {
                 Finally.Visibility = Visibility.Hidden;
                 NotAll.Visibility = Visibility.Visible;
-                time.Start();
+               
             }
             else
             {
-                child.first_name_child = FirstNameChild.Text;
-                child.last_name_child = LastNameChild.Text;
-                child.middle_name_child = MiddleNameChild.Text;
-                child.data_of_bird = Convert.ToDateTime(DateOfBird.SelectedDate);
-                child.first_name_parent = FirstNameParent.Text;
-                child.last_name_parent = LastNameParent.Text;
-                child.middle_name_parent = MiddleNameParent.Text;
-                child.telephone_parent = TelephoneNumber.Text;
-                child.SNILS = Snils.Text;
-                child.PFDO = int.Parse(Pfdo.Text);
-                child.program = ProgramTB.Text;
-                child.@class = int.Parse(ClassTB.Text);
-                child.shift = int.Parse(Shift.Text);
-                child.school = School.Text;
-                child.address = AddressTB.Text;
-                child.educator = int.Parse(EducatorTB.Text);
-                child.Status = "true";
-                db.Child.Add(child);
-                db.SaveChanges();
-                NotAll.Visibility = Visibility.Hidden;
-                Finally.Visibility = Visibility.Visible;
-                time.Start();
-                
+                try
+                {
+                    child.first_name_child = FirstNameChild.Text;
+                    child.last_name_child = LastNameChild.Text;
+                    child.middle_name_child = MiddleNameChild.Text;
+                    child.data_of_bird = Convert.ToDateTime(DateOfBird.SelectedDate);
+                    child.first_name_parent = FirstNameParent.Text;
+                    child.last_name_parent = LastNameParent.Text;
+                    child.middle_name_parent = MiddleNameParent.Text;
+                    child.telephone_parent = TelephoneNumber.Text;
+                    child.SNILS = Snils.Text;
+                    child.PFDO = Convert.ToInt64(Pfdo.Text);
+                    child.program = ProgramTB.Text;
+                    child.@class = int.Parse(ClassTB.Text);
+                    child.shift = int.Parse(Shift.Text);
+                    child.school = School.Text;
+                    child.address = AddressTB.Text;
+                    child.educator = int.Parse(EducatorTB.Text);
+                    child.Status = "true";
+                    db.Child.Add(child);
+                    db.SaveChanges();
+                    Cleaner();
+                    NotAll.Visibility = Visibility.Hidden;
+                    Finally.Visibility = Visibility.Visible;
+                    time.Start();
+                }
+                catch (Exception)
+                {
+                    Error_.Visibility = Visibility.Visible;
+                    Cleaner();
+                }
             }
         }
         private void Time_Tick(object sender, EventArgs e)
@@ -76,6 +85,25 @@ namespace Raspisanie.Groups
         private void CancelBTN_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Cleaner()
+        {
+            FirstNameChild.Clear();
+            LastNameChild.Clear();
+            MiddleNameChild.Clear();
+            FirstNameParent.Clear();
+            LastNameParent.Clear();
+            MiddleNameParent.Clear();
+            TelephoneNumber.Clear();
+            Snils.Clear();
+            Pfdo.Clear();
+            ProgramTB.Clear();
+            ClassTB.Clear();
+            Shift.Clear();
+            School.Clear();
+            AddressTB.Clear();
+            EducatorTB.Clear();
         }
     }
 }

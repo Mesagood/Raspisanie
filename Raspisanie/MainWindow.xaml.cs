@@ -53,8 +53,8 @@ namespace Raspisanie
         }
 
         private void AddGroup_Click(object sender, RoutedEventArgs e)
-        {           
-            
+        {
+            new GroupWindow().ShowDialog();
         }
 
       

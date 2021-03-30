@@ -1,0 +1,46 @@
+﻿<Window x:Class="Raspisanie.Groups.GroupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Raspisanie.Groups"
+        mc:Ignorable="d"
+        Title="GroupWindow" Height="400" Width="501">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="brushWatermarkBackground" Color="White" />
+        <SolidColorBrush x:Key="brushWatermarkForeground" Color="LightSteelBlue" />
+        <SolidColorBrush x:Key="brushWatermarkBorder" Color="Indigo" />
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <Style x:Key="EntryFieldStyle" TargetType="Grid" >
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+    </Window.Resources>
+
+
+    <Grid>
+
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="332,78,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" >
+            <TextBlock Margin="5,2" Text="№ Группы" Foreground="{StaticResource brushWatermarkForeground}"
+                       Visibility="{Binding ElementName=NumberGroupTB, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <TextBox TextWrapping="Wrap" Name="NumberGroupTB" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
+        </Grid>
+
+        <DataGrid x:Name="GroupGrid" AutoGenerateColumns="False" Margin="1,0,0,0" IsReadOnly="True" HorizontalAlignment="Left" Width="292">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№ Группы" Width="300" Binding="{Binding Path=NumGroup}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="300,168,0,0" VerticalAlignment="Top" Width="75" x:Name="add" Click="add_Click"/>
+        <Button Content="Отменить" HorizontalAlignment="Left" Margin="401,330,0,0" VerticalAlignment="Top" Width="76" x:Name="cancel" Click="cancel_Click"/>
+        <Button Content="Удалить" HorizontalAlignment="Left" Margin="390,168,0,0" VerticalAlignment="Top" Width="74" x:Name="del" Click="del_Click"/>
+
+        <Label Content="Не все поля заполнены!" Margin="300,112,-137,0" Visibility="Hidden" x:Name="NotAll" Foreground="Red" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="329" FontSize="16"/>
+        <Label Content="Запись добавлена!" Margin="310,112,-128,0" Visibility="Hidden" x:Name="Finally" Foreground="Green" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="310" FontSize="16"/>
+        <Label Content="Неверные данные" Margin="310,112,-128,0" Visibility="Hidden" x:Name="Error_" Foreground="Red" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="310" FontSize="16"/>
+    </Grid>
+
+
+</Window>

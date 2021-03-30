@@ -69,12 +69,8 @@ namespace Raspisanie.Groups
 
         private void cancel_Click(object sender, RoutedEventArgs e)
         {
-            Load();
+            this.Close();
         }
 
-        private void AddChild_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

@@ -1,0 +1,34 @@
+﻿<Window x:Class="Raspisanie.Groups.FormGroupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Raspisanie.Groups"
+        mc:Ignorable="d"
+        Title="FormGroupWindow" Height="350" Width="400">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="brushWatermarkBackground" Color="White" />
+        <SolidColorBrush x:Key="brushWatermarkForeground" Color="LightSteelBlue" />
+        <SolidColorBrush x:Key="brushWatermarkBorder" Color="Indigo" />
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <Style x:Key="EntryFieldStyle" TargetType="Grid" >
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        
+        <ComboBox Width="100" Height="30" Margin="139,57,153,232"  x:Name="LessionCB"/>
+        <ComboBox Width="100" Height="30" Margin="140,103,152,186"  x:Name="GroupCB"/>
+
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="139,158,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" >
+            <TextBlock Margin="5,2" Text="Фамилия (Реб)" Foreground="{StaticResource brushWatermarkForeground}"
+                       Visibility="{Binding ElementName=FirstNameChild, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <TextBox TextWrapping="Wrap" Name="FirstNameChild" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
+        </Grid>
+
+
+    </Grid>
+</Window>

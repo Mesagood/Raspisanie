@@ -118,6 +118,7 @@
 
         <Label Content="Не все поля заполнены!" Margin="353,213,0,0" Visibility="Hidden" x:Name="NotAll" Foreground="Red" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="329" FontSize="16"/>
         <Label Content="Запись добавлена!" Margin="353,213,0,0" Visibility="Hidden" x:Name="Finally" Foreground="Green" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="310" FontSize="16"/>
+        <Label Content="Неверные данные" Margin="353,213,0,0" Visibility="Hidden" x:Name="Error_" Foreground="Red" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="310" FontSize="16"/>
 
 
 
