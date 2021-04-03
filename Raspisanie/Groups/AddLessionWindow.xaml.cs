@@ -16,13 +16,13 @@ using System.Windows.Threading;
 namespace Raspisanie.Groups
 {
     /// <summary>
-    /// Логика взаимодействия для GroupWindow.xaml
+    /// Логика взаимодействия для AddLessionWindow.xaml
     /// </summary>
-    public partial class GroupWindow : Window
+    public partial class AddLessionWindow : Window
     {
         RaspisanieEntities db = new RaspisanieEntities();
         DispatcherTimer time;
-        public GroupWindow()
+        public AddLessionWindow()
         {
             InitializeComponent();
             time = new DispatcherTimer();
@@ -31,25 +31,20 @@ namespace Raspisanie.Groups
             Load();
         }
 
-        private void Time_Tick(object sender, EventArgs e)
-        {
-            Finally.Visibility = Visibility.Hidden;
-            NotAll.Visibility = Visibility.Hidden;
-            time.IsEnabled = false;
-        }
+        
 
         private void Load()
-        {           
-            var quer = from g in db.Group
-                       where g.Status == "true"
-                       select g;
-            GroupGrid.ItemsSource = quer.ToList();
+        {
+            var quer = from l in db.Lessions
+                       where l.Status == "true"
+                       select l;
+            LessGrid.ItemsSource = quer.ToList();
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            Group group = new Group();
-            if (NumberGroupTB.Text =="")
+            Lessions lessions = new Lessions();
+            if (NameLessTB.Text == "")
             {
                 Finally.Visibility = Visibility.Hidden;
                 NotAll.Visibility = Visibility.Visible;
@@ -60,13 +55,12 @@ namespace Raspisanie.Groups
             {
                 try
                 {
-                    group.NumGroup = int.Parse(NumberGroupTB.Text);
-                    group.Status = "true";
-                    db.Group.Add(group);
+                    lessions.NameLessions = NameLessTB.Text;
+                    lessions.Status = "true";
+                    db.Lessions.Add(lessions);
                     db.SaveChanges();
                     NotAll.Visibility = Visibility.Hidden;
                     Finally.Visibility = Visibility.Visible;
-                    Cleaner();
                     time.Start();
                     Load();
                 }
@@ -92,8 +86,8 @@ namespace Raspisanie.Groups
                 MessageBoxImage.Information);
             if (messageBoxResult == MessageBoxResult.Yes)
             {
-                Group group = (Group)GroupGrid.SelectedItem;
-                group.Status = "false";
+                Lessions lessions = (Lessions)LessGrid.SelectedItem;
+                lessions.Status = "false";
                 db.SaveChanges();
                 Load();
             }
@@ -103,9 +97,16 @@ namespace Raspisanie.Groups
             }
         }
 
+        private void Time_Tick(object sender, EventArgs e)
+        {
+            Finally.Visibility = Visibility.Hidden;
+            NotAll.Visibility = Visibility.Hidden;
+            time.IsEnabled = false;
+        }
+
         private void Cleaner()
         {
-            NumberGroupTB.Clear();
+            NameLessTB.Clear();
         }
     }
 }

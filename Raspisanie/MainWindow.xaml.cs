@@ -55,58 +55,23 @@ namespace Raspisanie
         private void AddGroup_Click(object sender, RoutedEventArgs e)
         {
             new GroupWindow().ShowDialog();
+            
         }
-
       
-
         private void FormAGroup_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void DeleteChild_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void DeleteGroup_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void DisbandGroup_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void AddTeacher_Click(object sender, RoutedEventArgs e)
-        {
-
+            new FormGroupWindow().ShowDialog();            
         }
 
         private void AddLession_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void DeleteTeacher_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void DeleteLession_Click(object sender, RoutedEventArgs e)
-        {
-
+            new AddLessionWindow().ShowDialog();
         }
 
         private void AddRecord_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void DeleteRecord_Click(object sender, RoutedEventArgs e)
-        {
-
+            new AddRecordWindow().ShowDialog();
+            Load();
         }
     }
 }

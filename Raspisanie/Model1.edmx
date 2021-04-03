@@ -27,6 +27,7 @@
           <Property Name="address" Type="nvarchar" MaxLength="80" />
           <Property Name="educator" Type="int" Nullable="false" />
           <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="StatusGroup" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Group">
           <Key>
@@ -69,17 +70,6 @@
           <Property Name="IdLessions" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameLessions" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
-        </EntityType>
-        <EntityType Name="TEST">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Statussss" Type="varchar" MaxLength="10" />
-          <Property Name="Statusssssss" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Stattttus" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -184,7 +174,6 @@
           <EntitySet Name="Lession-Child" EntityType="Self.Lession-Child" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Lession-Employee" EntityType="Self.Lession-Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Lessions" EntityType="Self.Lessions" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TEST" EntityType="Self.TEST" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Group-Child_Child" Association="Self.FK_Group-Child_Child">
             <End Role="Child" EntitySet="Child" />
@@ -238,6 +227,7 @@
           <Property Name="address" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
           <Property Name="educator" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StatusGroup" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Group_Child" Relationship="Self.FK_Group_Child_Child" FromRole="Child" ToRole="Group_Child" />
         </EntityType>
         <EntityType Name="Group">
@@ -291,17 +281,6 @@
           <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Lession_Child" Relationship="Self.FK_Lession_Child_Lessions" FromRole="Lessions" ToRole="Lession_Child" />
           <NavigationProperty Name="Lession_Employee" Relationship="Self.FK_Lession_Employee_Lessions" FromRole="Lessions" ToRole="Lession_Employee" />
-        </EntityType>
-        <EntityType Name="TEST">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Statussss" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Statusssssss" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Stattttus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -407,7 +386,6 @@
           <EntitySet Name="Lession_Child" EntityType="Self.Lession_Child" />
           <EntitySet Name="Lession_Employee" EntityType="Self.Lession_Employee" />
           <EntitySet Name="Lessions" EntityType="Self.Lessions" />
-          <EntitySet Name="TEST" EntityType="Self.TEST" />
           <EntitySet Name="Users" EntityType="Self.Users" />
           <AssociationSet Name="FK_Group_Child_Child" Association="Self.FK_Group_Child_Child">
             <End Role="Child" EntitySet="Child" />
@@ -461,6 +439,7 @@
                 <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="educator" ColumnName="educator" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="StatusGroup" ColumnName="StatusGroup" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -508,18 +487,6 @@
                 <ScalarProperty Name="IdLessions" ColumnName="IdLessions" />
                 <ScalarProperty Name="NameLessions" ColumnName="NameLessions" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TEST">
-            <EntityTypeMapping TypeName="gr681_bsyuModel.TEST">
-              <MappingFragment StoreEntitySet="TEST">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Statussss" ColumnName="Statussss" />
-                <ScalarProperty Name="Statusssssss" ColumnName="Statusssssss" />
-                <ScalarProperty Name="Stattttus" ColumnName="Stattttus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

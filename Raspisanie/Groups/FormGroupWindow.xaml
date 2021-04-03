@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Raspisanie.Groups"
         mc:Ignorable="d"
-        Title="FormGroupWindow" Height="350" Width="400">
+        Title="FormGroupWindow" Height="380" Width="300">
 
     <Window.Resources>
         <SolidColorBrush x:Key="brushWatermarkBackground" Color="White" />
@@ -17,18 +17,18 @@
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
     </Window.Resources>
-    
+
     <Grid>
-        
-        <ComboBox Width="100" Height="30" Margin="139,57,153,232"  x:Name="LessionCB"/>
-        <ComboBox Width="100" Height="30" Margin="140,103,152,186"  x:Name="GroupCB"/>
 
-        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="139,158,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" >
-            <TextBlock Margin="5,2" Text="Фамилия (Реб)" Foreground="{StaticResource brushWatermarkForeground}"
-                       Visibility="{Binding ElementName=FirstNameChild, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
-            <TextBox TextWrapping="Wrap" Name="FirstNameChild" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
-        </Grid>
+        <ComboBox Width="100" Height="30" Margin="105,62,0,0"  x:Name="CBChild" HorizontalAlignment="Left" VerticalAlignment="Top" DisplayMemberPath="first_name_child"/>
+        <ComboBox Width="100" Height="30" Margin="105,112,0,0"  x:Name="CBGroup" HorizontalAlignment="Left" VerticalAlignment="Top"   DisplayMemberPath="NumGroup"/>
 
+        <Label Content="Ребенок" Margin="105,32,0,0" Width="100" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top"/>
+        <Label Content="№ Группы" Margin="105,87,0,0" Width="100" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top"/>
+        <Button Content="Добавить" Height="30" x:Name="Add" Click="Add_Click" Margin="105,245,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
+
+        <TextBlock Text="Не все поля заполнены" TextWrapping="Wrap" Margin="30,279,0,0" Visibility="Hidden" x:Name="NotAll" Foreground="Red" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="199" FontSize="16"/>
+        <Label Content="Запись добавлена" Margin="30,279,0,0" Visibility="Hidden" x:Name="Fine" Foreground="Green" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="199" FontSize="16"/>
 
     </Grid>
 </Window>

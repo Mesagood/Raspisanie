@@ -38,6 +38,7 @@ namespace Raspisanie
         public string address { get; set; }
         public int educator { get; set; }
         public string Status { get; set; }
+        public string StatusGroup { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Group_Child> Group_Child { get; set; }

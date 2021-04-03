@@ -1,11 +1,11 @@
-﻿<Window x:Class="Raspisanie.Groups.GroupWindow"
+﻿<Window x:Class="Raspisanie.Groups.AddLessionWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Raspisanie.Groups"
         mc:Ignorable="d"
-        Title="GroupWindow" Height="400" Width="500">
+        Title="AddLessionWindow" Height="400" Width="500">
 
     <Window.Resources>
         <SolidColorBrush x:Key="brushWatermarkBackground" Color="White" />
@@ -17,19 +17,17 @@
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
     </Window.Resources>
-
-
     <Grid>
 
         <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="332,78,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" >
-            <TextBlock Margin="5,2" Text="№ Группы" Foreground="{StaticResource brushWatermarkForeground}"
-                       Visibility="{Binding ElementName=NumberGroupTB, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
-            <TextBox TextWrapping="Wrap" Name="NumberGroupTB" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
+            <TextBlock Margin="5,2" Text="Название" Foreground="{StaticResource brushWatermarkForeground}"
+                       Visibility="{Binding ElementName=NameLessTB, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <TextBox TextWrapping="Wrap" Name="NameLessTB" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
         </Grid>
 
-        <DataGrid x:Name="GroupGrid" AutoGenerateColumns="False" Margin="1,0,0,0" IsReadOnly="True" HorizontalAlignment="Left" Width="292">
+        <DataGrid x:Name="LessGrid" AutoGenerateColumns="False" Margin="1,0,0,0" IsReadOnly="True" HorizontalAlignment="Left" Width="292">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="№ Группы" Width="300" Binding="{Binding Path=NumGroup}"/>
+                <DataGridTextColumn Header="Название" Width="300" Binding="{Binding Path=NameLessions}"/>
             </DataGrid.Columns>
         </DataGrid>
 
@@ -40,7 +38,6 @@
         <Label Content="Не все поля заполнены!" Margin="300,112,-137,0" Visibility="Hidden" x:Name="NotAll" Foreground="Red" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="329" FontSize="16"/>
         <Label Content="Запись добавлена!" Margin="310,112,-128,0" Visibility="Hidden" x:Name="Finally" Foreground="Green" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="310" FontSize="16"/>
         <Label Content="Неверные данные" Margin="310,112,-128,0" Visibility="Hidden" x:Name="Error_" Foreground="Red" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="310" FontSize="16"/>
+
     </Grid>
-
-
 </Window>

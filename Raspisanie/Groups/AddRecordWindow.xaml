@@ -1,0 +1,48 @@
+﻿<Window x:Class="Raspisanie.Groups.AddRecordWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Raspisanie.Groups"
+        mc:Ignorable="d"
+        Title="AddRecordWindow" Height="380" Width="300">
+
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="brushWatermarkBackground" Color="White" />
+        <SolidColorBrush x:Key="brushWatermarkForeground" Color="LightSteelBlue" />
+        <SolidColorBrush x:Key="brushWatermarkBorder" Color="Indigo" />
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <Style x:Key="EntryFieldStyle" TargetType="Grid" >
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+
+        <ComboBox Width="100" Height="30" Margin="105,53,0,0"  x:Name="LessionCB" HorizontalAlignment="Left" VerticalAlignment="Top" DisplayMemberPath="NameLessions"/>
+        <ComboBox Width="100" Height="30" Margin="105,112,0,0"  x:Name="GroupCB" HorizontalAlignment="Left" VerticalAlignment="Top"   DisplayMemberPath="NumGroup"/>
+
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="105,167,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" >
+            <TextBlock Margin="5,2" Text="Номер кабинета" Foreground="{StaticResource brushWatermarkForeground}"
+                       Visibility="{Binding ElementName=NumberCub, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <TextBox TextWrapping="Wrap" Name="NumberCub" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
+        </Grid>
+
+
+        <Grid Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}" Margin="105,203,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" >
+            <TextBlock Margin="5,2" Text="Дата-время" Foreground="{StaticResource brushWatermarkForeground}"
+                       Visibility="{Binding ElementName=DateTimeLess, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <TextBox TextWrapping="Wrap" Name="DateTimeLess" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}" />
+        </Grid>
+
+        <Label Content="Занятие" Margin="105,18,0,301" Width="100" HorizontalAlignment="Left"/>
+        <Label Content="Группа" Margin="105,82,0,0" Width="100" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top"/>
+        <Button Content="Добавить" Height="30" x:Name="Add" Click="Add_Click" Margin="105,245,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
+
+        <TextBlock Text="Не все поля заполнены или некорректная дата" TextWrapping="Wrap" Margin="30,279,0,0" Visibility="Hidden" x:Name="NotAll" Foreground="Red" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="199" FontSize="16"/>
+        <Label Content="Запись добавлена" Margin="30,279,0,0" Visibility="Hidden" x:Name="Fine" Foreground="Green" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="199" FontSize="16"/>
+
+    </Grid>
+</Window>

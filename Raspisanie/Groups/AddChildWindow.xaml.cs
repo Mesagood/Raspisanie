@@ -38,7 +38,7 @@ namespace Raspisanie.Groups
             {
                 Finally.Visibility = Visibility.Hidden;
                 NotAll.Visibility = Visibility.Visible;
-               
+                time.Start();
             }
             else
             {

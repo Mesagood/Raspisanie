@@ -73,6 +73,12 @@
     <Compile Include="Groups\AddChildWindow.xaml.cs">
       <DependentUpon>AddChildWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Groups\AddLessionWindow.xaml.cs">
+      <DependentUpon>AddLessionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Groups\AddRecordWindow.xaml.cs">
+      <DependentUpon>AddRecordWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Groups\ChildWindow.xaml.cs">
       <DependentUpon>ChildWindow.xaml</DependentUpon>
     </Compile>
@@ -99,13 +105,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="TEST.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Page Include="Groups\AddChildWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Groups\AddLessionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Groups\AddRecordWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -179,9 +190,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Photo\Сотрудник.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -196,6 +204,5 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
